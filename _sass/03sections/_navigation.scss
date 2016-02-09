@@ -1,9 +1,31 @@
-/* ADDED for centering navbar items */
-.navbar .inner-nav ul {
-position:relative;left:50%;float:left;margin-right:0;margin-left:0;
+// Centered navigatin on screens wider than 768px
+@media (min-width: 768px) {    
+    .navbar-header {
+        float: left;
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+    }
+    .navbar-brand {float:none;}
+
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+      text-align: center;
+    }
 }
 
-/* ADDED for centering navbar items */
-.navbar .inner-nav li {
-position:relative;right:50%;float:left;margin:0;list-style:none
+
+.navbar-brand {
+  padding: 0px; /* firefox bug fix */
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px; /* firefox bug fix */
+  width: auto;
+  margin: auto;
 }
