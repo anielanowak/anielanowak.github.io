@@ -1,0 +1,74 @@
+// padding and spacing of containing elements in featured skills section
+.feat-skill {
+  padding: 50px 0 30px 0;
+}
+
+.feat-skill > .col-md-8 {
+  padding: 0 0 0 0;
+}
+
+.feat-skill > .col-md-8 > .col-md-4 {
+  padding: 0 10px 0 10px;
+}
+
+// Hover tile animation refil from http://refills.bourbon.io/components/
+// Here it is converted in to a mixin
+@mixin skill-promo {
+  $base-border-color: gainsboro !default;
+  $base-line-height: 1.5em !default;
+  $medium-screen: em(640) !default;
+  $hover-tile-height: 10em;
+  $base-spacing: 1.5em;
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  border: 0px solid $base-border-color; // Changed border to 0px from 1px
+  cursor: pointer;
+  height: $hover-tile-height;
+  margin-bottom: $base-line-height;
+  @include media($medium-screen) {
+    width: 100%;
+  }
+  .hover-tile-container {
+    height: $hover-tile-height;
+    overflow: hidden;
+  }
+  .hover-tile-container:hover > .hover-tile {
+    @include transform(translate(0, -100%));
+  }
+  .hover-tile {
+    @include transition(all, 0.2s ease-in-out);
+    background: inherit;
+    color: white;
+    height: inherit;
+    overflow: hidden;
+    padding: $base-spacing;
+  }
+  .hover-tile-hidden {
+    background: transparentize(#000, 0.5);
+    p {
+      color: transparentize(#fff, 0.3);
+      line-height: $base-line-height;
+    }
+    h4 {
+      margin: 0 0 0.5em 0;
+    }
+  }
+}
+
+// Featured skill elements and urls of their backgrounds
+.hover-tile-outer-left {
+  background: url("/assets/img/cultural-animation-featured.jpg");
+  @include skill-promo;
+}
+
+.hover-tile-outer-middle {
+  background: url("/assets/img/stage-featured.jpg");
+  @include skill-promo;
+}
+
+.hover-tile-outer-right {
+  background: url("/assets/img/umbrella-smile-bw.jpg");
+  @include skill-promo;
+}
+
