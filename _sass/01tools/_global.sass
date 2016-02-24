@@ -1,6 +1,4 @@
-// Body padding to push down content when fixed nav bar is used
 body
-    padding: 0 0 0 0
     background-color: white
     
 a
@@ -10,3 +8,7 @@ a
 a:hover
     color: $link-color-hover
     text-decoration: none
+
+// Solves overflow on the right side of the screen
+html, body
+    overflow-x: hidden
